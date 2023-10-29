@@ -1,0 +1,52 @@
+#photo-1 {
+    width: calc(100% + 50vw * tan(12deg) + 1px);
+    height: 100%;
+    transform: skewX(-12deg);
+    background-color: black;
+    position: absolute;
+    overflow: hidden;
+    transform-origin: left;
+    margin-left: calc(-50vw * tan(12deg));
+}
+
+#photo-1::before {
+    content: "";
+    background-repeat: no-repeat;
+    transform: skewX(12deg);
+    position: absolute;
+    background-position: center;
+    opacity: 30%;
+    background-size: cover;
+    background-image: url('https://wallpapers.com/images/hd/food-4k-1pf6px6ryqfjtnyr.jpg');
+    transform-origin: top left;
+
+    width: 125%;
+    height: 100%;
+    margin-left: -3rem;
+}
+#photo-2 {
+    width: calc(100% + 50vw * tan(12deg));
+    height: 100%;
+    transform: skewX(-12deg);
+    background-color: black;
+    position: absolute;
+    overflow: hidden;
+    transform-origin: left;
+    margin-right: calc(-50vw * tan(12deg));
+}
+
+#photo-2::before {
+    content: "";
+    background-repeat: no-repeat;
+    transform: skewX(12deg);
+    position: absolute;
+    background-position: center;
+    opacity: 30%;
+    background-size: cover;
+    background-image: url('https://wallpapers.com/images/featured/food-ccsaubvss63lkcyb.jpg');
+    transform-origin: top left;
+
+    width: 125%;
+    height: 100%;
+    margin-left: -3rem;
+}
