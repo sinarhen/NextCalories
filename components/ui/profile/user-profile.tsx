@@ -124,7 +124,7 @@ const UserProfile: React.FC = () => {
 
   // Get user's favorite products
   const getProducts = useCallback(async () => {
-    if (user?.favoriteRecipes) {
+    if (user?.favoriteProducts) {
       const products = await Promise.all(user?.favoriteProducts.map(async (recipeId: string) => {
         const data = await getProduct(recipeId);
         return data.hints[0];
