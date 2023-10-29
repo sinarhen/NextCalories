@@ -21,10 +21,9 @@ export default async function RootLayout({
                                          }: {
   children: React.ReactNode
 }) {
-  const session = auth();
 
   return (
-    <Provider session={session}>
+    // <Provider session={session}>
       <AuthProvider>
         <html lang="en">
         <body className={font.className}>
@@ -35,7 +34,7 @@ export default async function RootLayout({
         </body>
         </html>
       </AuthProvider>
-    </Provider>
+    // </Provider>
 
   )
 }
