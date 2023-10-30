@@ -1,7 +1,11 @@
 import AuthForm from '@/components/ui/auth-form';
 import PageContainer from "@/components/ui/page-container";
 import Navbar from "@/components/ui/navbar/navbar";
+import {Metadata} from "next";
 
+export const metadata: Metadata = {
+  title: 'Authentication',
+}
 export default function Auth({
   searchParams
                              }:{

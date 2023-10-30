@@ -45,7 +45,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
   return (
     <div
       onClick={() => {router.push(`/recipes/${id}`)}}
-      className='overflow-hidden cursor-pointer border-gray-100 relative md:h-[320px] h-[512px]  w-full shadow-lg rounded bg-gray-300'>
+      className='overflow-hidden cursor-pointer border-gray-100 relative md:h-[320px] h-[512px] lg:h-[342px] w-full shadow-lg rounded bg-gray-300'>
       <div
         style={{backgroundImage: `url('${imageSrc}')`}}
         className={`

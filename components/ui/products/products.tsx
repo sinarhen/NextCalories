@@ -29,16 +29,15 @@ const Products: React.FC<productsProps> = ({
       <Header>{error}</Header>
     </PageContainer>
   }
-  if (!products || isEmpty(products.hints)){
-    return <PageContainer>
-      <Header>No data found</Header>
-    </PageContainer>
-  }
   console.log(products)
+
+  if (!products || isEmpty(products.hints)){
+    return <Header>No data found</Header>
+  }
   const { hints } = products;
 
   return (
-    <div className={twMerge("max-w-screen-xl w-full", wrapperClassName)}>
+    <div className={twMerge("min-w-full lg:px-4 w-full", wrapperClassName)}>
       <div
         className={twMerge("grid grid-cols-1 w-full lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-4 gap-y-6", gridClassName)}>
 

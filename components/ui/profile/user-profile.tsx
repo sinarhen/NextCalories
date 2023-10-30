@@ -57,7 +57,6 @@ const UserProfile: React.FC = () => {
       image: user?.image,
       name: user?.name,
     });
-    console.log('image and name rerender');
   }, [user?.image, user?.name]);
 
   // Reset form to original data
@@ -67,7 +66,6 @@ const UserProfile: React.FC = () => {
       image: user?.image || "",
       name: user?.name || "",
     });
-    console.log('reseted rerender');
   }, [user?.image, user?.name]);
 
   // Handle image removal
@@ -110,56 +108,6 @@ const UserProfile: React.FC = () => {
     console.log('rerender submit');
   }, [errors, formData, mutate, router, user]);
 
-  // Get user's favorite recipes
-  const getRecipes = useCallback(async () => {
-    if (user?.favoriteRecipes) {
-      const recipes = await Promise.all(user?.favoriteRecipes.map(async (recipeId: string) => {
-        return await getRecipe(recipeId);
-      }));
-      console.log(recipes);
-      return { hits: recipes };
-    }
-    return null;
-  }, [user?.favoriteRecipes]);
-
-  // Get user's favorite products
-  const getProducts = useCallback(async () => {
-    if (user?.favoriteProducts) {
-      const products = await Promise.all(user?.favoriteProducts.map(async (recipeId: string) => {
-        const data = await getProduct(recipeId);
-        return data.hints[0];
-      }));
-      return {hints: products};
-    }
-    return null;
-  }, [user?.favoriteProducts]);
-
-  // State variables for recipes and products
-  const [recipes, setRecipes] = useState<{ hits: any[] } | null>();
-  const [products, setProducts] = useState<{ hints: any[] } | null>();
-
-  // Fetch and update recipes when user's favorite recipes change
-  useEffect(() => {
-    const getRec = async () => {
-      const data = await getRecipes();
-      setRecipes(data);
-      return data;
-    };
-    getRec().catch(err => console.log(err));
-  }, [getRecipes, user?.favoriteRecipes]);
-
-  // Fetch and update products when user's favorite recipes change
-  useEffect(() => {
-    const getProd = async () => {
-      const data = await getProducts();
-      setProducts(data);
-      console.log(data);
-      return data;
-    };
-    getProd().catch(err => console.log(err));
-  }, [getProducts, user?.favoriteRecipes]);
-
-  // Render loading or user profile
   if (isLoading) {
     return <p>Is loading...</p>;
   }
@@ -224,29 +172,7 @@ const UserProfile: React.FC = () => {
           </Button>
         </div>)
       }
-      <div className='flex flex-col md:mt-16 mt-28'>
-        <div className='flex w-full items-center h-full justify-between'>
-          <Header>
-            Your favorite Recipes
-          </Header>
-          <button className='text-zinc-300 underline'>
-            more...
-          </button>
-        </div>
-        <Recipes recipes={recipes} wrapperClassName='mt-5' gridClassName={'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}/>
-      </div>
 
-      <div className='flex flex-col md:mt-16 mt-28'>
-        <div className='flex w-full items-center h-full justify-between'>
-          <Header>
-            Your favorite Products
-          </Header>
-          <button className='text-zinc-300 underline'>
-            more...
-          </button>
-        </div>
-        <Products products={products} wrapperClassName='mt-5' gridClassName={'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}/>
-      </div>
       {/* ... Rest of the code */}
     </div>
   );

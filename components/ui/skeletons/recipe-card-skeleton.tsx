@@ -3,7 +3,7 @@
 const RecipeCardSkeleton = () => {
   return (
     <div
-      className='overflow-hidden bg-gray-300 animate-pulse border-gray-100 flex items-end md:h-[320px] h-[512px]  w-full shadow-lg rounded'>
+      className='overflow-hidden bg-gray-300 animate-pulse border-gray-100 flex items-end md:h-[320px] lg:h-[342px]  h-[512px]  w-full shadow-lg rounded'>
 
       <div className='px-2 h-fit flex flex-col gap-y-1.5 animate-pulse py-1 w-full'>
         <div className='w-1/5 rounded-3xl h-4 bg-gray-400 animate-pulse'></div>

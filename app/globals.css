@@ -51,13 +51,6 @@
   }
 }
 
-.ripple {
-  position: absolute;
-  background: radial-gradient(circle, transparent 1%, rgba(0, 0, 255, 0.4) 1%) center center;
-  background-size: 15000% 15000%;
-  transform: scale(0);
-  animation: ripple 0.5s linear;
-}
 
 @keyframes ripple {
   to {

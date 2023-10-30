@@ -3,8 +3,11 @@ import RecipePageContent from "@/components/ui/recipe/recipe-page-content";
 import {getRecipe} from "@/utils/get-recipe";
 import PageContainer from "@/components/ui/page-container";
 import Navbar from "@/components/ui/navbar/navbar";
+import {Metadata} from "next";
 
-
+export const metadata: Metadata = {
+  title: 'Recipe',
+}
 const RecipePage = async (
   {
     params

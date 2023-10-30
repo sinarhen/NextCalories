@@ -22,19 +22,17 @@ const Recipes: React.FC<RecipesProps> = ({
                                            gridClassName,
                                            wrapperClassName
                                          }) => {
-
+  console.log(recipes)
   if (error) {
     toast.info(error, {toastId: 'filtersAndNotQuery'})
-    return <PageContainer>
-      <Header>{error}</Header>
-    </PageContainer>
-  }
-  if (!recipes || isEmpty(recipes.hits)) {
-    return null;
+    return <Header>{error}</Header>
+    }
+  if (!recipes || isEmpty(recipes.hits)){
+    return <Header>No data found</Header>
   }
   const {hits: hits} = recipes
   return (
-    <div className={twMerge("max-w-screen-xl w-full", wrapperClassName)}>
+    <div className={twMerge("lg:px-8 min-w-full w-full", wrapperClassName)}>
       <div
         className={twMerge("grid grid-cols-1 w-full lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-4 gap-y-6", gridClassName)}>
 

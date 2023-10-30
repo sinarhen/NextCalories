@@ -124,13 +124,13 @@ const Navbar = () => {
               {menuIsOpen &&
                   <>
                       <DropdownMenuContentSection
-                          onClick={() => router.push(`/profile/${user.name ? user.name : user.id}`)}
+                          onClick={() => router.push(`/profile`)}
                           className='bg-gray-400/70 hover:bg-gray-400/90 border-b'>
                           <ButtonBottomBorder>My Profile</ButtonBottomBorder>
                       </DropdownMenuContentSection>
 
                       <DropdownMenuContentSection
-                          onClick={() => router.push(`/profile/${user.name ? user.name : user.id}/favorites`)}
+                          onClick={() => router.push(`/profile`)}
                           className='bg-gray-400/70 hover:bg-gray-400/90 sm:border-l border-b'>
                           <ButtonBottomBorder>My favorites</ButtonBottomBorder>
                       </DropdownMenuContentSection>

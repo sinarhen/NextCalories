@@ -3,7 +3,11 @@ import Header from "@/components/ui/header";
 import Header2 from "@/components/ui/header2";
 import AuthSection from "@/components/ui/auth-section";
 import Navbar from "@/components/ui/navbar/navbar";
+import {Metadata} from "next";
 
+export const metadata: Metadata = {
+  title: 'About',
+}
 export default function AboutPage() {
   return (
     <>
