@@ -65,7 +65,7 @@ const Navbar = () => {
   return (
     <div ref={navRef} style={isSticky ? StickyNavbarStyles : {}} className={twMerge(
       'sticky ' +
-      `w-full bg-white ` +
+      `w-full bg-white min-w-full` +
       'text-black transition-all z-40 duration-300 top-0',
       (isSticky) && 'text-black duration-1000 bg-white/70 backdrop-blur-md  ',
       isBetween && 'md:opacity-1 opacity-0',

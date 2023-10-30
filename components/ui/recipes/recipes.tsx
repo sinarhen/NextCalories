@@ -6,6 +6,7 @@ import {twMerge} from "tailwind-merge";
 import {toast} from "react-toastify";
 import PageContainer from "@/components/ui/page-container";
 import isEmpty from "lodash/isEmpty";
+import Header2 from "@/components/ui/header2";
 
 interface RecipesProps {
   recipes: any | null;
@@ -25,10 +26,10 @@ const Recipes: React.FC<RecipesProps> = ({
   console.log(recipes)
   if (error) {
     toast.info(error, {toastId: 'filtersAndNotQuery'})
-    return <Header>{error}</Header>
+    return <Header2 className='text-gray-400'>{error}</Header2>
     }
   if (!recipes || isEmpty(recipes.hits)){
-    return <Header>No data found</Header>
+    return <Header2 className='text-gray-400'>No data found</Header2>
   }
   const {hits: hits} = recipes
   return (

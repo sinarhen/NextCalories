@@ -6,6 +6,7 @@ import {toast} from "react-toastify";
 import PageContainer from "@/components/ui/page-container";
 import ProductCard from "@/components/ui/product/product-card";
 import isEmpty from "lodash/isEmpty";
+import Header2 from "@/components/ui/header2";
 
 interface productsProps {
   products: any | null;
@@ -25,14 +26,12 @@ const Products: React.FC<productsProps> = ({
 
   if (error) {
     toast.info(error, {toastId: 'filtersAndNotQuery'})
-    return <PageContainer>
-      <Header>{error}</Header>
-    </PageContainer>
+    return <Header className='text-gray-400'>{error}</Header>
   }
   console.log(products)
 
   if (!products || isEmpty(products.hints)){
-    return <Header>No data found</Header>
+    return <Header2 className='text-gray-400'>No data found</Header2>
   }
   const { hints } = products;
 
