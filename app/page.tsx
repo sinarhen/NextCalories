@@ -1,4 +1,4 @@
-t status import {getRandomRecipesNames} from "@/utils/random-recipe";
+import {getRandomRecipesNames} from "@/utils/random-recipe";
 import fetcher from "@/lib/fetcher";
 import AuthSection from "@/components/ui/auth-section";
 import PageContainer from "@/components/ui/page-container";
