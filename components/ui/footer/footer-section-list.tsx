@@ -15,7 +15,7 @@ const FooterSectionList:React.FC<FooterSectionList> = ({list}) => {
         const href = item.href;
         return (
           <>
-            <li><a href={href}>{label}</a></li>
+            <li key={href}><a href={href}>{label}</a></li>
           </>
         )
       })}

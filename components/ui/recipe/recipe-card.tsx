@@ -14,6 +14,10 @@ interface RecipeCardProps {
 const RecipeCard: React.FC<RecipeCardProps> = ({
   recipe
 }) => {
+  const router = useRouter();
+  if (!recipe){
+    return null;
+  }
   const id = recipe.recipe.uri.split("#recipe_")[1];
 
   const title = recipe.recipe.label
@@ -37,7 +41,6 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
   const round = (val: string) => {
     return parseFloat(val).toFixed(2)
   }
-  const router = useRouter();
 
   return (
     <div

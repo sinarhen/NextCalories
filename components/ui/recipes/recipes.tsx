@@ -5,6 +5,7 @@ import Header from "@/components/ui/header";
 import {twMerge} from "tailwind-merge";
 import {toast} from "react-toastify";
 import PageContainer from "@/components/ui/page-container";
+import isEmpty from "lodash/isEmpty";
 
 interface RecipesProps {
   recipes: any | null;
@@ -28,13 +29,10 @@ const Recipes: React.FC<RecipesProps> = ({
       <Header>{error}</Header>
     </PageContainer>
   }
-  if (!recipes) {
+  if (!recipes || isEmpty(recipes.hits)) {
     return null;
   }
   const {hits: hits} = recipes
-  if (!hits) {
-    return null;
-  }
   return (
     <div className={twMerge("max-w-screen-xl w-full", wrapperClassName)}>
       <div
@@ -45,7 +43,7 @@ const Recipes: React.FC<RecipesProps> = ({
           return (
             <RecipeCard
 
-              key={recipe.id}
+              key={recipe}
               recipe={recipe}
             />
           )
