@@ -15,9 +15,9 @@ const SearchRecipesSkewedSection = ({
   return (
     <div className='w-full h-full relative'>
 
-      <div id={id} className='skewed '>
+      <div id={id} className='w-full h-full relative '>
 
-        <div className={twMerge('skew-x-12 text-white flex w-full h-full flex-col py-24 left-0 md:items-center items-start', wrapperClassName)}>
+        <div className={twMerge('md:skew-x-12 text-white flex w-full h-full flex-col py-24 left-0 md:items-center items-start', wrapperClassName)}>
           {/*<div className='w-full h-full text-red-700 items-center flex justify-center'>*/}
           {/*    <p>*/}
           {/*      dsadsad*/}

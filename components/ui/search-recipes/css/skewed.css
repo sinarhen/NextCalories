@@ -24,6 +24,7 @@
     height: 100%;
     margin-left: -3rem;
 }
+
 #photo-2 {
     width: calc(100% + 50vw * tan(12deg));
     height: 100%;
@@ -50,3 +51,4 @@
     height: 100%;
     margin-left: -3rem;
 }
+

@@ -7,7 +7,7 @@ const fetcher = async ({url, params}: {url: string; params?: object}) => {
         return res.data
     }).catch(
         err => {
-            console.log("[ERROR OCCURED]" + err + '\n')
+            console.log("[ERROR OCCURED]" + err + '\n' + err.response.message)
             return null;
         }
     )
