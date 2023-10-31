@@ -98,12 +98,10 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
                                 bg-gradient-to-b
                                 from-black
                                 md:group-hover:via-15%
-                                md:via-5%
-                                md:via-black
+                                via-5%
                                 h-full
-                                via-transparent
-                                md:to-transparent
-                                to-black
+                                via-black
+                                to-transparent
                                 transition-all
                                 duration-500
 
@@ -120,7 +118,8 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
                             h-full
                             justify-end
                             px-2 py-1
-                            md:bg-transparent bg-gray-300/20
+                            md:bg-transparent
+                            bg-black/10
                             md:group-hover:bg-gray-300/10
                             text-white
                             '>

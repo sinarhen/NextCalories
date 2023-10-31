@@ -10,6 +10,8 @@ import {authOptions} from "@/lib/auth";
 import prisma from "@/lib/prisma";
 import {getProduct, getRecipe} from "@/utils/get-recipe";
 import Header from "@/components/ui/header";
+import {redirect} from "next/navigation";
+import Header2 from "@/components/ui/header2";
 
 
 export const metadata: Metadata = {
@@ -18,8 +20,9 @@ export const metadata: Metadata = {
 export default async function Page() {
   const session = await getServerSession(authOptions);
   if (!session) {
-    console.log('!session')
+    return redirect('/auth')
   }
+
   const user = await prisma.user.findUnique({
     where: {
       email: session?.user?.email ? session.user.email : undefined
@@ -46,10 +49,10 @@ export default async function Page() {
       <Navbar/>
       <PageContainer>
         <UserProfile/>
-        <Header className='mt-24 md:mt-6'>Your favorite recipes</Header>
+        <Header className='mt-24 mb-6 md:mb-3 md:mt-6'>Your favorite recipes</Header>
         <Recipes recipes={recipes} gridClassName={'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}/>
 
-        <Header className='mt-28 md:mt-14'>Your favorite products</Header>
+        <Header className='mt-28 mb-6 md:mb-3 md:mt-14'>Your favorite products</Header>
         <Products products={products}
                   gridClassName={'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}/>
       </PageContainer>

@@ -6,7 +6,7 @@ const Header = ({children, className}: {
   className?: string;
 }) => {
   return (
-    <h1 className={twMerge(' md:text-center text-7xl md:text-5xl sm:text-4xl mt-2 mb-5 font-extrabold lg:text-3xl', className)}>
+    <h1 className={twMerge(' md:text-center text-5xl md:text-3xl sm:text-4xl  mt-2 font-extrabold lg:text-2xl', className)}>
       {children}
     </h1>
 

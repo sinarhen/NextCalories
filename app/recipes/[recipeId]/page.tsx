@@ -25,7 +25,7 @@ const RecipePage = async (
     <>
       <Navbar/>
       <RecipePageHeader recipe={recipe ? recipe.recipe : null}/>
-      <PageContainer>
+      <PageContainer className='mt-10'>
         <RecipePageContent recipe={recipe? recipe.recipe : null}/>
       </PageContainer>
     </>

@@ -20,13 +20,13 @@ const Footer: React.FC = () => {
 
   ]
   return (
-    <PageContainer className='bg-gray-200 sm w-full sticky top-[100vh]'>
+    <PageContainer className='bg-gray-200 px-12 py-5 md:px-24 md:py-12  w-full sticky top-[100vh]'>
       <div className='w-full gap-x-8 lg:grid-cols-4 gap-y-8 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid'>
         <FooterSection>
           <FooterSectionHeader>
             API
           </FooterSectionHeader>
-          <hr className='h-px bg-gray-300 mt-1 mb-2'/>
+          <hr className='h-px bg-gray-300 mt-1 mb-2 mr-1'/>
           <FooterSectionList list={APISectionContent}/>
         </FooterSection>
 
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
           <FooterSectionHeader>
             About
           </FooterSectionHeader>
-          <hr className='h-px bg-gray-300 mt-1 mb-2'/>
+          <hr className='h-px bg-gray-300 mt-1 mb-2 mr-1'/>
           <FooterSectionList list={AboutSectionContent}/>
         </FooterSection>
 

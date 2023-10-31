@@ -114,8 +114,7 @@ const UserProfile: React.FC = () => {
   if (!user) {
     return null;
   }
-  console.log(user)
-  // Return the user profile UI
+
   return (
     <div className="relative w-full h-full">
       <div className={`flex flex-col h-full w-full  md:flex-row`}>
@@ -167,7 +166,7 @@ const UserProfile: React.FC = () => {
       </div>
       {!editMode && (
         <div className="flex w-full md:w-48 md:px-4 h-full">
-          <Button className="bg-blue-600 w-full md:justify-self-center  px-5 py-4 md:px-4 md:py-2 md:text-lg text-3xl  ml-4 md:ml-0 mt-2" onClick={() => setEditMode(true)}>
+          <Button className="bg-blue-600 w-full md:justify-self-center  px-5 py-4 md:px-4 md:py-2 md:text-lg mx-2 text-3xl mt-2" onClick={() => setEditMode(true)}>
             Edit profile
           </Button>
         </div>)
