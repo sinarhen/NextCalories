@@ -6,6 +6,7 @@ import {useRouter} from "next/navigation";
 interface Ingredient{
   text: string;
   quantity: string|number;
+  foodId: string;
 }
 interface RecipeCardProps {
   recipe: any;
@@ -137,7 +138,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
                     {ingredients.map((ingredient: Ingredient) => {
                       const text = ingredient.text
                       return (
-                        <li className='sm:text-sm text-l' key={ingredient.quantity}> - {text}</li>
+                        <li className='sm:text-sm text-l' key={ingredient?.foodId}> - {text}</li>
                       )
                     })}
                   </ul>

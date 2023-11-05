@@ -7,7 +7,7 @@ const NutrientsTable = ({
   nutrientsList,
   totalDaily
 }: {
-  nutrientsList: any;
+  nutrientsList: any | null;
   totalDaily: any;
 }) => {
   const [expandedItems, setExpandedItems] = useState<{ [key: number]: boolean }>({});
@@ -26,7 +26,7 @@ const NutrientsTable = ({
           <th className="px-6 py-3">Total</th>
           <th className="px-6 py-3">%DV</th>
         </tr>
-        {nutrientsList.map((item: any, index: number) => (
+        {nutrientsList?.map((item: any, index: number) => (
           <>
             <tr
               className={twMerge(

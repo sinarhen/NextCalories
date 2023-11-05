@@ -41,7 +41,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const ingredients: string[] = food.foodContentsLabel ? food.foodContentsLabel.split(';').map((item: string) => {
     return capitalize(item.trim())
   }) : null;
-  console.log(ingredients)
   return (
     <div
       onClick={() => {

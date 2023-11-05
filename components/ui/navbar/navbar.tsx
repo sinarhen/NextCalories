@@ -40,7 +40,6 @@ const Navbar = () => {
   useEffect(() => {
     setIsMounted(true)
     window.addEventListener('scroll', stickNavbar);
-    console.log(window.scrollY);
     return () => {
       window.removeEventListener('scroll', stickNavbar);
     };

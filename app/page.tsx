@@ -43,7 +43,7 @@ export default async function Page() {
           </Header>
           <SeeMoreWrapper>
             <Recipes wrapperClassName='mt-4 pointer-events-none'
-                     gridClassName='grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4' recipes={ recipes ?? null}/>
+                     gridClassName='grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4' recipes={ recipes }/>
           </SeeMoreWrapper>
         </div>
       </PageContainer>

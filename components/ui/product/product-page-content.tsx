@@ -24,9 +24,9 @@ const ProductPageContent: React.FC<RecipePageContentProps> = ({product}) => {
   const cautions = product.cautions;
   const ingredients = product.ingredients;
   const calories = product.calories;
-  const fats = product.totalNutrients.FAT.quantity;
-  const carbs = product.totalNutrients.CHOCDF.quantity;
-  const protein = product.totalNutrients.PROCNT.quantity;
+  const fats = product.totalNutrients?.FAT.quantity;
+  const carbs = product.totalNutrients?.CHOCDF.quantity;
+  const protein = product.totalNutrients?.PROCNT.quantity;
 
   const [showTable, setShowTable] = useState(false);
 
@@ -59,7 +59,7 @@ const ProductPageContent: React.FC<RecipePageContentProps> = ({product}) => {
           icon={AiOutlineUnorderedList}
         >
           <ul className="list ml-3 list-disc mt-3">
-            {ingredients.map((ingredient: any, index: number) => (
+            {ingredients?.map((ingredient: any, index: number) => (
               <li className="text-md md:text-sm" key={index}>
                 {capitalize((ingredient.parsed[0].food))}
               </li>
@@ -73,7 +73,7 @@ const ProductPageContent: React.FC<RecipePageContentProps> = ({product}) => {
           className="col-span-8 rounded bg-red-100 w-full px-2 py-1 sm:col-span-2"
         >
           <ul className="list list-disc ml-5">
-            {cautions.map((label: string[], index: number) => (
+            {cautions?.map((label: string[], index: number) => (
               <li key={index}>{label}</li>
             ))}
           </ul>
@@ -99,29 +99,29 @@ const ProductPageContent: React.FC<RecipePageContentProps> = ({product}) => {
           className="col-span-8"
         >
           <h1>
-            This is how many time it will take to burn <b>{calories.toFixed()}</b>{" "}
+            This is how many time it will take to burn <b>{calories?.toFixed()}</b>{" "}
             calories
           </h1>
           <div className="grid-cols-2 md:grid-cols-4 mt-3 gap-x-3 gap-y-2 md:grid-rows-1 grid-rows-2 grid">
             <ActivityTime
               icon={TbSwimming}
               header="Swimming"
-              minutes={(calories / 10).toFixed()}
+              minutes={(calories / 10)?.toFixed()}
             />
             <ActivityTime
               icon={FaRunning}
               header="Running"
-              minutes={(calories / 11.4).toFixed()}
+              minutes={(calories / 11.4)?.toFixed()}
             />
             <ActivityTime
               icon={BiCycling}
               header="Cycling"
-              minutes={(calories / 6.73).toFixed()}
+              minutes={(calories / 6.73)?.toFixed()}
             />
             <ActivityTime
               icon={FaWalking}
               header="Walking"
-              minutes={(calories / 4).toFixed()}
+              minutes={(calories / 4)?.toFixed()}
             />
 
             <div></div>
@@ -151,7 +151,7 @@ const ProductPageContent: React.FC<RecipePageContentProps> = ({product}) => {
           <div className={twMerge(`w-full hidden transition-all`, showTable && "block")}>
             <h1 className='text-sm text-gray-700 md:text-sm my-1 italic'>* daily value reflects the percentage of the
               daily norm of nutrient consumption</h1>
-            <NutrientsTable totalDaily={product.totalDaily} nutrientsList={Object.values(product.totalNutrients)}/>
+            <NutrientsTable totalDaily={product.totalDaily} nutrientsList={product.totalNutrients ? Object.values(product.totalNutrients): null}/>
           </div>
         </RecipePageContentSection>
       </div>

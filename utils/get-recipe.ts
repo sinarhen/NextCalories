@@ -64,15 +64,14 @@ export async function getNutrients(productId: string){
   const url = 'https://api.edamam.com/api/food-database/v2/nutrients'
   const params = {
     app_id: process.env.EDAMAM_FOOD_API_ID,
-    app_key: process.env.EDAMAM_FOOD_API_ID,
+    app_key: process.env.EDAMAM_FOOD_API_KEY,
   }
   const body =
   {
     "ingredients": [
     {
       "quantity": 1,
-      "measureURI": "http://www.edamam.com/ontologies/edamam.owl#Measure_unit"
-      ,
+      "measureURI": "http://www.edamam.com/ontologies/edamam.owl#Measure_unit",
       "foodId": productId
     }
   ]}

@@ -23,7 +23,6 @@ const Recipes: React.FC<RecipesProps> = ({
                                            gridClassName,
                                            wrapperClassName
                                          }) => {
-  console.log(recipes)
   if (error) {
     toast.info(error, {toastId: 'filtersAndNotQuery'})
     return <Header2 className='text-gray-400'>{error}</Header2>
@@ -38,11 +37,9 @@ const Recipes: React.FC<RecipesProps> = ({
         className={twMerge("grid grid-cols-1 w-full lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-4 gap-y-6", gridClassName)}>
 
         {hits.map((recipe: any) => {
-          console.log(recipe)
           return (
             <RecipeCard
-
-              key={recipe}
+              key={recipe.uri?.split('#')[1]}
               recipe={recipe}
             />
           )
