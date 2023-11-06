@@ -1,7 +1,8 @@
 # Recipe Tracking Website
 **Version:** 0.1b
-URL: https://new-calories.vercel.app
-made with: Next 13, Prisma, Supabase, 
+  
+URL: https://new-calories.vercel.app  
+made with: Next 13, Prisma, Supabase, typescript, tailwind, next auth, postgresql.
 ## Website Review
 
 ### Landing page
