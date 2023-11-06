@@ -6,7 +6,7 @@ made with: Next 13, Prisma, Supabase, typescript, tailwind, next auth, postgresq
 ## Website Review
 
 ### Landing page
-The landing page contains these three unique sections:
+The landing page contains these unique sections:
 - **Recipes Searching Section**
 - **Products Searching Section**
 - **Random Recipes Overview**
