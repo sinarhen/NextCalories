@@ -5,6 +5,7 @@ import {useRouter} from "next/navigation";
 import isEmpty from "lodash/isEmpty";
 import {capitalize} from "lodash";
 import RecipeCardSkeleton from "@/components/ui/skeletons/recipe-card-skeleton";
+import Image from "next/image";
 
 interface ProductCardProps {
   product: any;
@@ -47,25 +48,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
         router.push(`/products/${id}`)
       }}
       className='overflow-hidden cursor-pointer border-gray-100 relative md:h-[320px] h-[512px] lg:h-[342px]  w-full shadow-lg rounded bg-gray-300'>
-      <div
-        style={{backgroundImage: `url('${imageSrc}')`}}
-        className={`
-            rounded
-            absolute
-            bg-no-repeat
-            bg-center
-            bg-cover
-            z-10
-            w-full 
-            h-full
-            `}>
-        {!imageSrc &&
-            <h1 className='text-zinc-100 w-min text-8xl h-full md:text-7xl lg:text-6xl'>
-                Image not found
-            </h1>
-        }
 
-      </div>
+      <Image
+        src={imageSrc}
+        alt={""}
+      />
       <div className='
             absolute
             z-20

@@ -2,6 +2,7 @@
 
 import React from "react";
 import {useRouter} from "next/navigation";
+import Image from "next/image";
 
 interface Ingredient{
   text: string;
@@ -47,20 +48,12 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
     <div
       onClick={() => {router.push(`/recipes/${id}`)}}
       className='overflow-hidden cursor-pointer border-gray-100 relative md:h-[320px] h-[512px] lg:h-[342px] w-full shadow-lg rounded bg-gray-300'>
-      <div
-        style={{backgroundImage: `url('${imageSrc}')`}}
-        className={`
-            rounded
-            absolute
-            bg-no-repeat
-            bg-center
-            bg-cover
-            z-10
-            w-full 
-            h-full
-            `}>
-
-      </div>
+      <Image
+        src={imageSrc}
+        alt=""
+        layout='fill'
+        objectFit="cover"
+      />
       <div className='
             absolute
             z-20

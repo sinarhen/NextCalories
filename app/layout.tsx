@@ -23,7 +23,7 @@ export default async function RootLayout({
   return (
     <AuthProvider>
       <html lang="en">
-      <body className={font.className}>
+      <body suppressHydrationWarning={true} className={font.className}>
       <ToastProvider>
         {children}
         <Footer/>

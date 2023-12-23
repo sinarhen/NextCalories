@@ -1,4 +1,3 @@
-'use client';
 import React from "react";
 
 interface FooterSectionList{
@@ -10,12 +9,12 @@ interface FooterSectionList{
 const FooterSectionList:React.FC<FooterSectionList> = ({list}) => {
   return (
     <ul className='text-xl sm:text-l md:text-sm lg:text-xs'>
-      {list.map(item => {
+      {list.map((item, id) => {
         const label = item.label;
         const href = item.href;
         return (
           <>
-            <li key={href}><a href={href}>{label}</a></li>
+            <li key={id}><a href={href}>{label}</a></li>
           </>
         )
       })}
