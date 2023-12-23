@@ -51,7 +51,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
       <Image
         src={imageSrc}
-        alt={""}
+        alt=""
+        fill 
+        className="object-cover"
       />
       <div className='
             absolute

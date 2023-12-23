@@ -1,12 +1,12 @@
-'use client'
+'use client';
+
 import React from "react";
 import RecipeCard from "@/components/ui/recipe/recipe-card";
-import Header from "@/components/ui/header";
 import {twMerge} from "tailwind-merge";
 import {toast} from "react-toastify";
-import PageContainer from "@/components/ui/page-container";
 import isEmpty from "lodash/isEmpty";
 import Header2 from "@/components/ui/header2";
+import { motion } from "framer-motion";
 
 interface RecipesProps {
   recipes: any | null;
@@ -23,6 +23,9 @@ const Recipes: React.FC<RecipesProps> = ({
                                            gridClassName,
                                            wrapperClassName
                                          }) => {
+      const transitionDuration = 0.2;
+      const delayPerItem = 0.05;
+                                    
   if (error) {
     toast.info(error, {toastId: 'filtersAndNotQuery'})
     return <Header2 className='text-gray-400'>{error}</Header2>
@@ -36,13 +39,21 @@ const Recipes: React.FC<RecipesProps> = ({
       <div
         className={twMerge("grid grid-cols-1 w-full lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-4 gap-y-6", gridClassName)}>
 
-        {hits.map((recipe: any) => {
+        {hits.map((recipe: any, index: number) => {
           return (
-            <RecipeCard
-              key={recipe.uri?.split('#')[1]}
-              recipe={recipe}
-            />
-          )
+            <motion.div
+              key={recipe.id + index}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: index * delayPerItem, duration: transitionDuration }}
+            >
+              <RecipeCard
+                            recipe={recipe}
+                          />
+                        
+            </motion.div>
+            )
 
         })}
 

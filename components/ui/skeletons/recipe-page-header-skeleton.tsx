@@ -1,13 +1,11 @@
 import React from "react";
 import {AiFillHeart} from "react-icons/ai";
-import {useRouter} from "next/navigation";
 
 const RecipePageHeaderSkeleton = () => {
-  const router = useRouter();
 
   return (
   <div className='flex flex-col px-3 sm:px-8 md:px-14 py-6 bg-gray-300 animate-pulse h-full w-full'>
-    <button className='text-gray-400 flex animate-pulse  rounded-xl' onClick={() => router.back()}>Back to search</button>
+    <a className='text-gray-400 flex animate-pulse  rounded-xl' href="/recipes">Back to search</a>
     <div className='flex h-full w-full px-10 sm:px-20 md:px-40 gap-y-5 pb-10 items-center flex-col'>
       <div className='w-full  mt-5'>
         <div className='w-full justify-between items-center flex'>

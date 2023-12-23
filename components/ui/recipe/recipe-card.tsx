@@ -51,8 +51,8 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
       <Image
         src={imageSrc}
         alt=""
-        layout='fill'
-        objectFit="cover"
+        fill 
+        className="object-cover"
       />
       <div className='
             absolute

@@ -39,7 +39,7 @@ const MoreOptionsSelect: React.FC<MoreOptionsSelectProps> = ({
       </div>
       <select value={value} name={name} onChange={onChange && ((event: any) => onChange(event.target.value))}
               className='px-2 py-1 text-gray-300 rounded-full outline-0 bg-gray-700'>
-        <option disabled className='rounded-full' value={''} selected>{placeholder ?? "Choose an option"}</option>
+        <option disabled className='rounded-full' value={''}>{placeholder ?? "Choose an option"}</option>
         {categories.map((label, index) => (
           <option onClick={onClick && (() => onClick(label))} value={label} key={index}>
             {capitalize(label)}
