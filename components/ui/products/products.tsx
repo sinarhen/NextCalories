@@ -1,9 +1,7 @@
-'use client'
 import React from "react";
 import Header from "@/components/ui/header";
 import {twMerge} from "tailwind-merge";
 import {toast} from "react-toastify";
-import PageContainer from "@/components/ui/page-container";
 import ProductCard from "@/components/ui/product/product-card";
 import isEmpty from "lodash/isEmpty";
 import Header2 from "@/components/ui/header2";
@@ -28,7 +26,6 @@ const Products: React.FC<productsProps> = ({
     toast.info(error, {toastId: 'filtersAndNotQuery'})
     return <Header className='text-gray-400'>{error}</Header>
   }
-  console.log(products)
 
   if (!products || isEmpty(products.hints)){
     return <Header2 className='text-gray-400'>No data found</Header2>
@@ -41,7 +38,6 @@ const Products: React.FC<productsProps> = ({
         className={twMerge("grid grid-cols-1 w-full lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-4 gap-y-6", gridClassName)}>
 
         {hints.map((product: any) => {
-          console.log(product)
           return (
             <ProductCard
               key={product.food.foodId}

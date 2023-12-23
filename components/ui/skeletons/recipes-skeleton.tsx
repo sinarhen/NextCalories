@@ -1,4 +1,3 @@
-'use client';
 
 import React from "react";
 import RecipeCardSkeleton from "@/components/ui/skeletons/recipe-card-skeleton";

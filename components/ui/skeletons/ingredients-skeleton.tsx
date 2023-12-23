@@ -1,4 +1,3 @@
-'use client';
 import React from "react";
 import {AiOutlineUnorderedList} from "react-icons/ai";
 import RecipePageContentSectionHeader from "@/components/ui/skeletons/recipe-page-content-section-header-skeleton";

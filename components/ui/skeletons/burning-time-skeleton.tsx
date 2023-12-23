@@ -1,5 +1,3 @@
-'use client';
-
 
 import ActivityTimeSkeleton from "@/components/ui/skeletons/activity-time-skeleton";
 import React from "react";
@@ -8,9 +6,7 @@ import RecipePageContentSectionHeaderSkeleton
 import {AiOutlineFire} from "react-icons/ai";
 
 
-const BurningTimeSkeleton = ({
-
-                             }) => {
+const BurningTimeSkeleton = () => {
   return (
 
     <div className='col-span-8'>

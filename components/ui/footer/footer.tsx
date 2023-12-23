@@ -1,4 +1,3 @@
-'use client';
 
 import React from "react";
 import PageContainer from "@/components/ui/page-container";

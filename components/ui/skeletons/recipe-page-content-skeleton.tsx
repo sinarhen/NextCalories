@@ -1,4 +1,3 @@
-'use client';
 
 import React from "react";
 import NutrientsCalculatorSkeleton from "@/components/ui/skeletons/nutrients-calculator-skeleton";

@@ -1,4 +1,3 @@
-'use client';
 
 import RecipePageContentSectionHeader from "@/components/ui/skeletons/recipe-page-content-section-header-skeleton";
 import React from "react";

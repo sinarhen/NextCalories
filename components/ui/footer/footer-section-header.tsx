@@ -1,6 +1,3 @@
-'use client';
-
-import React from "react";
 
 const FooterSectionHeader = ({children}: {children: React.ReactNode}) => {
   return (

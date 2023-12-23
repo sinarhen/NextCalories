@@ -68,7 +68,6 @@ export const authOptions: AuthOptions = {
   secret: process.env.NEXTAUTH_SECRET
 };
 
-export default NextAuth(authOptions);
 export function auth(...args: [GetServerSidePropsContext["req"], GetServerSidePropsContext["res"]] | [NextApiRequest, NextApiResponse] | []) {
   return getServerSession(...args, authOptions)
 }

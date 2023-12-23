@@ -17,7 +17,7 @@ const ProviderButton: React.FC<ProviderButtonProps> = ({
 
 }) => {
     return (
-                <Button onClick={() => provider === 'github' ?
+                <Button disabled onClick={() => provider === 'github' ?
                   signIn('github', { callbackUrl: '/api/auth/callback/github' })
                   : signIn('google', { callbackUrl: '/api/auth/callback/google' })
                 } className={className}>

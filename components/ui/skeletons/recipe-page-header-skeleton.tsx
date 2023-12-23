@@ -1,4 +1,3 @@
-'use client'
 import React from "react";
 import {AiFillHeart} from "react-icons/ai";
 import {useRouter} from "next/navigation";
