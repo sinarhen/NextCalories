@@ -1,4 +1,7 @@
 # 🍽️ Recipe Tracking Website
+**CURRENTLY NOT MAINTAINING THE PROJECT.   
+some features might not work**
+
 **Version:** 0.1b
   
 URL: https://new-calories.vercel.app  
